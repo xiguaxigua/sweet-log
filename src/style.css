@@ -1,0 +1,65 @@
+.sweet-log__button.fixed-btn {
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  z-index: 1001;
+}
+.sweet-log__button {
+  padding: 5px 10px;
+  outline: none;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.sweet-log__content {
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sweet-log__content-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-bottom: 1px solid #fff;
+  height: 30px;
+  line-height: 30px;
+}
+
+.sweet-log__content-section {
+  flex: 1;
+  overflow: auto;
+}
+
+.sweet-log__log-item {
+  padding: 5px 8px;
+  color: #96b38a;
+  border-bottom: 1px solid gray;
+}
+
+.sweet-log__content.top {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sweet-log__content.bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sweet-log__content.left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sweet-log__content.right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
