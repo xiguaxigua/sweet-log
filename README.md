@@ -7,7 +7,7 @@
 # 引入方式
 
 ```html
-<script src="http://cdn.jsdelivr.net/npm/sweet-log/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweet-log/dist/index.js"></script>
 ```
 
 # 配置
@@ -16,7 +16,7 @@
 ## 使用 querystring（推荐）
 
 ```html
-<script src="http://cdn.jsdelivr.net/npm/sweet-log/dist/index.js?display=true"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweet-log/dist/index.js?display=true"></script>
 ```
 
 ## 定义全局对象
@@ -36,6 +36,6 @@ window.SWEET_LOG_CONFIG = {
 ## 使用 dataset
 
 ```html
-<script src="http://cdn.jsdelivr.net/npm/sweet-log/dist/index.js" data-display="true"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweet-log/dist/index.js" data-display="true"></script>
 ```
 
