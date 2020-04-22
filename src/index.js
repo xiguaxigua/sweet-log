@@ -1,5 +1,5 @@
 import './style.css';
-import { create } from './utils';
+import { create, parseParams } from './utils';
 
 const DEFAULT_SETTINGS = {
   /** 是否默认展示 */
@@ -14,7 +14,14 @@ const DEFAULT_SETTINGS = {
 
 class SweetLog {
   constructor(config = {}) {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, config);
+    const qs = parseParams(document.currentScript.src);
+    this.settings = Object.assign(
+      {},
+      DEFAULT_SETTINGS,
+      config,
+      document.currentScript.dataset,
+      qs
+    );
     this.display = this.settings.display;
 
     if (['left', 'right'].includes(this.settings.position)) {
@@ -66,14 +73,20 @@ class SweetLog {
 
     this.container.appendChild(this.btn);
     this.container.appendChild(this.content);
-    document.body.appendChild(this.container);
+    if (document.body) {
+      document.body.appendChild(this.container);
+    } else {
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.appendChild(this.container);
+      });
+    }
 
     this.changeConsole();
   }
 
   changeConsole() {
     const tmp = {};
-    ['log', 'info', 'warning', 'error'].forEach((key) => {
+    ['log', 'info', 'warning', 'error'].forEach(key => {
       tmp[key] = console[key];
       console[key] = (...args) => {
         this.pushLog(args);
